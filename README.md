@@ -25,7 +25,7 @@
 * Deverá utilizar C# como linguagem para o backend e não será levado em consideração framework escolhido.
 
 ### Instruções gerais
-* Será disponibilizado nos links abaixo os scripts de criação do modelo realcional para PostgreSQL e Sql Server. Para outros SGDBS vocé deverá disponibilizar o mesmo na pasta Infra.
+* Será disponibilizado nos links abaixo os scripts de criação do modelo relacional para PostgreSQL e Sql Server. Para outros SGDBS vocé deverá disponibilizar o mesmo na pasta Infra.
 * Fazer o **Fork** desse repositório em sua conta e solicitar o **PR** na finalização.
 
 ***
