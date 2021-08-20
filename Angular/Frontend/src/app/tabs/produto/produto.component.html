@@ -1,0 +1,160 @@
+<div class="panel-body" [hidden]="hidden" style="margin-bottom: 100px;">    
+  <h1 class="card-title" style="margin-left: 50px;">Cadastro</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label class="control-label">Nome do Produto:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.product_name"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Fornecedor:</label>
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="parametros.supplier_id">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of fornecedores"  [value]="item._id">
+            {{item.company_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Categoria:</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="parametros.category_id">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of categorias"  [value]="item.category_id">
+            {{item.category_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Quantidade por unidade:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.quantity_per_unit"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Preço unitário:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.unit_prince"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Unidades em estoque:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.units_in_stock"
+          />
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Nível de reabastecimento:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.reorder_level"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Unidades encomendadas:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.units_on_order"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Interrompido:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.discontinued"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;" >
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+        </div>	
+      </div>
+    </div>
+  </div>
+
+  <h1 class="card-title" style="margin-left: 50px;">Listagem</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <label class="control-label">Fornecedor:</label>
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="parametros.fornecedor">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of fornecedores"  [value]="item._id">
+            {{item.company_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Categoria:</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="parametros.categoria">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of categorias"  [value]="item.category_id">
+            {{item.category_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="listarProdutos()" class="btn btn-primary">Buscar</button>
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome do Produdo</th>
+            <th scope="col">Quantidade por Unidade</th>
+            <th scope="col">Preço unitário</th>
+            <th scope="col">Unidades em estoque</th>
+            <th scope="col">Nível de reabastecimento</th>
+            <th scope="col">Interrompido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of produtos">
+            <td>{{item.product_name}}</td>
+            <td>{{item.quantity_per_unit}}</td>
+            <td>R$ {{item.unit_prince}}</td>
+            <td>{{item.units_in_stock}}</td>
+            <td>{{item.reorder_level}}</td>
+            <td>{{item.discontinued}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

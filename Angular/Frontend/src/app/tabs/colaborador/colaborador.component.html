@@ -1,0 +1,210 @@
+<div class="panel-body" [hidden]="hidden" style="margin-bottom: 100px;">    
+  <h1 class="card-title" style="margin-left: 50px;">Cadastro</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label class="control-label">Primeiro Nome:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.first_name"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Ultimo Nome:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.last_name"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Titulo:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.title"
+          />
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Título de cortesia:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.title_of_courtesy"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Data de Aniversário:</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.birth_date"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Data de Contratação:</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.hire_date"
+          />
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Endereço:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.address"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Cidade: </label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.city"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Região:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.region"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Código Postal:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.postal_code"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Unidades encomendadas:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.country"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Telefone Fixo:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.home_phone"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Extensão:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.extension"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Relatorios para:</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="parametros.reports_to"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;" >
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+        </div>	
+      </div>
+    </div>
+  </div>
+
+  <h1 class="card-title" style="margin-left: 50px;">Listagem</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <label class="control-label">Data inicial do periodo:</label>
+        <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.dataInicial"
+          />
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Data final do periodo:</label>
+        <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.dataFinal"
+          />
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="listarColaboradores()" class="btn btn-primary">Buscar</button>
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Primeiro Nome</th>
+            <th scope="col">Ultimo Nome</th>
+            <th scope="col">Quantitativo de Pedidos Atendidos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of colaboradores">
+            <td>{{item.first_name}}</td>
+            <td>{{item.last_name}}</td>
+            <td>{{item.quantity}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="slim-scroll padder-h" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px"
+data-railopacity="0.2">
+  <header class="panel-heading">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(1)" href="#produto" #Produtos>Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(2)" href="#" #Fornecedor>Fornecedor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(3)" href="#" #Categorias>Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(4)" href="#" #Pedidos>Pedidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(5)" href="#" #Clientes>Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(6)" href="#" #Expedidores>Expedidores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="select(7)" href="#" #Colaboradores>Colaboradores</a>
+      </li>
+    </ul>
+  </header>
+  <div class="panel-body">
+    
+    <app-produto 
+      [hidden]="!HiddenProdutos"
+    ></app-produto>
+
+    <app-pedido
+      [hidden]="!HiddenPedidos"
+    ></app-pedido>
+
+    <app-fornecedor
+      [hidden]="!HiddenFornecedor"
+    ></app-fornecedor>
+
+    <app-categoria
+      [hidden]="!HiddenCategorias"
+    ></app-categoria>
+
+    <app-cliente
+      [hidden]="!HiddenClientes"
+    ></app-cliente>
+
+    <app-expedidor
+      [hidden]="!HiddenExpedidores"
+    ></app-expedidor>
+
+    <app-colaborador
+      [hidden]="!HiddenColaboradores"
+    ></app-colaborador>
+
+  </div>
+
+</div>

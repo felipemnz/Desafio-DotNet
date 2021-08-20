@@ -1,0 +1,229 @@
+<div class="panel-body" [hidden]="hidden" style="margin-bottom: 100px;">    
+  <h1 class="card-title" style="margin-left: 50px;">Cadastro</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      
+      <div class="col-lg-3">
+        <label class="control-label">Cliente:</label>
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="parametros.customer_id">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of clientes"  [value]="item.customer_id">
+            {{item.company_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Expedidor:</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="parametros.shipper_id">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of expedidores"  [value]="item.shipper_id">
+            {{item.company_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Colaborador:</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="parametros.employee_id">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of colaborador"  [value]="item.id">
+            {{item.first_name + " " + item.last_name}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Data do Pedido:</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.order_date"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Data do requirimento:</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.required_date"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Data do envio:</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="parametros.shipped_date"
+          />
+        </div>	
+      </div>
+      
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Envio:</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="parametros.ship_via"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Frete:</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="parametros.freight"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Nome do envio:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.ship_name"
+          />
+        </div>	
+      </div>
+      
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Endereço do envio:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.ship_address"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Cidade do envio:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.ship_city"
+          />
+        </div>	
+      </div>
+      
+      
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Região do Envio:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.ship_region"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Estado do Envio:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.ship_country"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Codigo do Envio:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.ship_postal_code"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;" >
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+        </div>	
+      </div>
+    </div>
+  </div>
+
+  <h1 class="card-title" style="margin-left: 50px;">Listagem</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-3">
+        <label class="control-label">Cliente:</label>
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="parametros.clienteId">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of clientes"  [value]="item.customer_id">
+            {{item.company_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <label class="control-label">Expedidor:</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="parametros.expedidorId">
+          <option value="0" selected>Selecione</option>
+          <option *ngFor="let item of expedidores"  [value]="item.shipper_id">
+            {{item.company_name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="listarPedidos()" class="btn btn-primary">Buscar</button>
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Data do pedido</th>
+            <th scope="col">Data do requirimentoe</th>
+            <th scope="col">Data do envio</th>
+            <th scope="col">Envio</th>
+            <th scope="col">Frete</th>
+            <th scope="col">Nome do envio</th>
+            <th scope="col">Endereço do envio</th>
+            <th scope="col">Cidade do envio</th>
+            <th scope="col">Região do Envio</th>
+            <th scope="col">Estado do Envio</th>
+            <th scope="col">Codigo do Envio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of pedidos">
+            <td>{{formatDate(item.order_date)}}</td>
+            <td>{{formatDate(item.required_date)}}</td>
+            <td>{{formatDate(item.shipped_date)}}</td>
+            <td>{{item.ship_via}}</td>
+            <td>$ {{item.freight}}</td>
+            <td>{{item.ship_name}}</td>
+            <td>{{item.ship_address}}</td>
+            <td>{{item.ship_city}}</td>
+            <td>{{item.ship_region}}</td>
+            <td>{{item.ship_country}}</td>
+            <td>{{item.ship_postal_code}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
