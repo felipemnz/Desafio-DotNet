@@ -1,0 +1,134 @@
+<div class="panel-body" [hidden]="hidden" style="margin-bottom: 100px;">
+  <h1 class="card-title" style="margin-left: 50px;">Cadastro</h1>
+  <div class="container align-items-center">
+    <div class="row" style="margin-top: 15px;">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label class="control-label">Nome da Compania:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.company_name"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Nome de contato:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.contact_name"
+          />
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+     
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Titulo do Contato:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.contact_title"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Endereço:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.address"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Cidade:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.city"
+          />
+        </div>	
+      </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+      
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Região:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.region"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Codigo Postal:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.postal_code"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Estado:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.country"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Telefone:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.phone"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Fax:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.fax"
+          />
+        </div>	
+      </div>
+      <div class="col-lg-3">
+        <div class="form-group">
+          <label class="control-label">Pagina:</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="parametros.homepage"
+          />
+        </div>	
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px;" >
+      <div class="col-lg-3">
+        <div class="form-group">
+          <button style="margin-top: 30px;" type="button" (click)="cadastrar()" class="btn btn-primary">Cadastrar</button>
+        </div>	
+      </div>
+    </div>
+  </div>
+</div>
